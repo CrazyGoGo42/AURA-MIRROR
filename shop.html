@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Aura Mirror</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <header class="shop-header">
+        <nav>
+            <div class="logo">AURA MIRROR</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#features">Features</a>
+                <a href="shop.html" class="active">Shop</a>
+                <a href="mirrors.html">Mirrors</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+        </nav>
+
+        <div class="shop-hero">
+            <div class="shop-hero-content">
+                <h1>The Aura Collection</h1>
+                <p>Discover products designed to enhance your natural beauty and complement your Aura Mirror experience.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <section class="shop-container">
+        <div class="category-sidebar">
+            <h3>Categories</h3>
+            <ul class="category-list">
+                <li class="category-item active" data-category="all">All Products</li>
+                <li class="category-item" data-category="skincare">Skincare</li>
+                <li class="category-item" data-category="makeup">Makeup</li>
+                <li class="category-item" data-category="haircare">Hair Care</li>
+                <li class="category-item" data-category="bodycare">Body Care</li>
+                <li class="category-item" data-category="wellness">Wellness</li>
+                <li class="category-item" data-category="accessories">Accessories</li>
+            </ul>
+
+            <div class="price-filter">
+                <h3>Price Range</h3>
+                <div class="price-slider-container">
+                    <input type="range" min="0" max="200" value="200" class="price-slider" id="priceRange">
+                    <div class="price-display">
+                        <span>$0</span>
+                        <span id="priceValue">$200+</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="featured-category">
+                <h3>Featured</h3>
+                <a href="mirrors.html" class="featured-link">
+                    <span class="material-symbols-outlined">stars</span>
+                    Aura Mirrors Collection
+                </a>
+            </div>
+        </div>
+
+        <div class="product-grid">
+            <!-- Skincare Products -->
+            <div class="product-card" data-category="skincare" data-price="45">
+                <div class="product-badge">Best Seller</div>
+                <div class="product-image"
+                    style="background-image: url('assets/images/7fab21a708716ad5965058f91293f10c.jpg')">
+                </div>
+                <h3>Hydrating Serum</h3>
+                <p>Advanced moisture-locking formula with hyaluronic acid</p>
+                <span class="price">$45</span>
+                <button class="shop-button">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="skincare" data-price="38">
+                <div class="product-image"
+                    style="background-image: url('https://images.unsplash.com/photo-1556227834-09f1de7a7d14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80')">
+                </div>
+                <h3>Balancing Toner</h3>
+                <p>Restores skin's natural pH while removing impurities</p>
+                <span class="price">$38</span>
+                <button class="shop-button">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="skincare" data-price="65">
+                <div class="product-badge">New</div>
+                <div class="product-image"
+                    style="background-image: url('assets/images/214df10700ca22befec2fb63622a864f.jpg')">
+                </div>
+                <h3>Rejuvenating Night Cream</h3>
+                <p>Anti-aging formula that works while you sleep</p>
+                <span class="price">$65</span>
+                <button class="shop-button">Add to Cart</button>
+            </div>
+
+            <!-- Makeup Products -->
+            <div class="product-card" data-category="makeup" data-price="52">
+                <div class="product-image"
+                    style="background-image: url('assets/images/874d7b2ffaa07f0221773a3850754088.jpg')">
+                </div>
+                <h3>Luminous Foundation</h3>
+                <p>Breathable coverage with a natural glow finish</p>
+                <span class="price">$52</span>
+                <button class="shop-button">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="makeup" data-price="36">
+                <div class="product-badge">Best Seller</div>
+                <div class="product-image"
+                    style="background-image: url('https://images.unsplash.com/photo-1627384113743-6bd5a479fffd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')">
+                </div>
+                <h3>Precision Eyeliner</h3>
+                <p>Waterproof formula with ultra-fine tip for perfect lines</p>
+                <span class="price">$36</span>
+                <button class="shop-button">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="makeup" data-price="48">
+                <div class="product-image"
+                    style="background-image: url('assets/images/8495b20e24caa11af192c46aa9c42dcd.jpg')">
+                </div>
+                <h3>Velvet Lip Color</h3>
+                <p>Moisturizing matte lipstick with 24-hour wear</p>
+                <span class="price">$48</span>
+                <button class="shop-button">Add to Cart</button>
+            </div>
+
+            <!-- Hair Care Products -->
+            <div class="product-card" data-category="haircare" data-price="42">
+                <div class="product-image"
+                    style="background-image: url('https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')">
+                </div>
+                <h3>Repairing Hair Mask</h3>
+                <p>Deep conditioning treatment for damaged hair</p>
+                <span class="price">$42</span>
+                <button class="shop-button">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="haircare" data-price="38">
+                <div class="product-image"
+                    style="background-image: url('https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')">
+                </div>
+                <h3>Volumizing Shampoo</h3>
+                <p>Adds body and fullness without weighing hair down</p>
+                <span class="price">$38</span>
+                <button class="shop-button">Add to Cart</button>
+            </div>
+
+            <!-- Body Care Products -->
+            <div class="product-card" data-category="bodycare" data-price="55">
+                <div class="product-badge">New</div>
+                <div class="product-image"
+                    style="background-image: url('https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')">
+                </div>
+                <h3>Firming Body Lotion</h3>
+                <p>Tightens and moisturizes for smoother skin</p>
+                <span class="price">$55</span>
+                <button class="shop-button">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="bodycare" data-price="32">
+                <div class="product-image"
+                    style="background-image: url('assets/images/bff48a59ea45dd8e5dbd2ce73332b156.jpg')">
+                </div>
+                <h3>Exfoliating Scrub</h3>
+                <p>Gentle polish for smooth, radiant skin</p>
+                <span class="price">$32</span>
+                <button class="shop-button">Add to Cart</button>
+            </div>
+
+            <!-- Wellness Products -->
+            <div class="product-card" data-category="wellness" data-price="85">
+                <div class="product-image"
+                    style="background-image: url('https://images.unsplash.com/photo-1519415387722-a1c3bbef716c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')">
+                </div>
+                <h3>Sleep Enhancing Diffuser</h3>
+                <p>Aromatherapy blend for restful nights</p>
+                <span class="price">$85</span>
+                <button class="shop-button">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="wellness" data-price="65">
+                <div class="product-badge">Popular</div>
+                <div class="product-image"
+                    style="background-image: url('assets/images/f9849f477de8d851d1ff9a656fdcf451.jpg')">
+                </div>
+                <h3>Beauty Supplement Pack</h3>
+                <p>30-day supply of skin, hair and nail boosting nutrients</p>
+                <span class="price">$65</span>
+                <button class="shop-button">Add to Cart</button>
+            </div>
+
+            <!-- Accessories -->
+            <div class="product-card" data-category="accessories" data-price="120">
+                <div class="product-image"
+                    style="background-image: url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80')">
+                </div>
+                <h3>Aura Mirror Stand</h3>
+                <p>Elegant stand for your Aura Mirror with adjustable angles</p>
+                <span class="price">$120</span>
+                <button class="shop-button">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="accessories" data-price="95">
+                <div class="product-badge">Limited</div>
+                <div class="product-image"
+                    style="background-image: url('https://images.unsplash.com/photo-1600612253971-422e7f7faeb6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80')">
+                </div>
+                <h3>Beauty Organizer</h3>
+                <p>Stylish storage solution for all your beauty essentials</p>
+                <span class="price">$95</span>
+                <button class="shop-button">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-products">
+        <h2>Trending Now</h2>
+        <div class="featured-grid">
+            <div class="featured-card">
+                <div class="featured-image"
+                    style="background-image: url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80')">
+                </div>
+                <div class="featured-content">
+                    <h3>Limited Edition Collection</h3>
+                    <p>Exclusive products curated for the season</p>
+                    <button class="secondary-button dark">Shop Collection</button>
+                </div>
+            </div>
+            <div class="featured-card">
+                <div class="featured-image"
+                    style="background-image: url('assets/images/fdf4ea48520098e2e43897e2edc140ff.jpg')">
+                </div>
+                <div class="featured-content">
+                    <h3>Mirror Companions</h3>
+                    <p>Products designed to enhance your Aura Mirror experience</p>
+                    <button class="secondary-button dark">Explore</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">AURA MIRROR</div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="careers.html">Careers</a>
+                    <a href="press.html">Press</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Products</h4>
+                    <a href="mirrors.html">Aura Mirror</a>
+                    <a href="shop.html">Accessories</a>
+                    <a href="app.html">App</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <a href="faq.html">FAQ</a>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="shipping.html">Shipping</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2023 Aura Mirror. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="shop.js" defer></script>
+</body>
+
+</html>
