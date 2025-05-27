@@ -16,18 +16,26 @@
         <nav>
             <div class="logo">AURA MIRROR</div>
             <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="index.html#features">Features</a>
-                <a href="shop.html">Shop</a>
-                <a href="mirrors.html">Mirrors</a>
-                <a href="about.html">About Us</a>
+                <a href="index.html" data-lang-text='{"en": "Home", "de": "Startseite"}'>Home</a>
+                <a href="index.html#features" data-lang-text='{"en": "Features", "de": "Funktionen"}'>Features</a>
+                <a href="shop.html" data-lang-text='{"en": "Shop", "de": "Shop"}'>Shop</a>
+                <a href="mirrors.html" data-lang-text='{"en": "Mirrors", "de": "Spiegel"}'>Mirrors</a>
+                <a href="about.html" data-lang-text='{"en": "About Us", "de": "Über Uns"}'>About Us</a>
+            </div>
+            <div class="language-switcher">
+                <button class="language-btn" data-lang="en"><img src="assets/images/us-flag.png" alt="English"></button>
+                <button class="language-btn" data-lang="de"><img src="assets/images/de-flag.png" alt="Deutsch"></button>
             </div>
         </nav>
 
         <div class="shop-hero">
             <div class="shop-hero-content">
-                <h1>Shipping Information</h1>
-                <p>Everything you need to know about our shipping policies, delivery options, and returns.</p>
+                <h1 data-lang-text='{"en": "Shipping Information", "de": "Versandinformationen"}'>Shipping Information
+                </h1>
+                <p
+                    data-lang-text='{"en": "Everything you need to know about our shipping policies, delivery options, and returns.", "de": "Alles, was Sie über unsere Versandrichtlinien, Lieferoptionen und Rücksendungen wissen müssen."}'>
+                    Everything you need to know about our shipping policies, delivery options, and returns.
+                </p>
             </div>
         </div>
     </header>
@@ -35,10 +43,19 @@
     <section class="shipping-section">
         <div class="container">
             <div class="shipping-tabs">
-                <button class="shipping-tab active" data-tab="domestic">Domestic Shipping</button>
-                <button class="shipping-tab" data-tab="international">International Shipping</button>
-                <button class="shipping-tab" data-tab="returns">Returns & Exchanges</button>
-                <button class="shipping-tab" data-tab="tracking">Order Tracking</button>
+                <button class="shipping-tab active" data-tab="domestic"
+                    data-lang-text='{"en": "Domestic Shipping", "de": "Inlandsversand"}'>Domestic Shipping
+                </button>
+                <button class="shipping-tab" data-tab="international"
+                    data-lang-text='{"en": "International Shipping", "de": "Internationaler Versand"}'>International
+                    Shipping
+                </button>
+                <button class="shipping-tab" data-tab="returns"
+                    data-lang-text='{"en": "Returns & Exchanges", "de": "Rücksendungen & Umtausch"}'>Returns & Exchanges
+                </button>
+                <button class="shipping-tab" data-tab="tracking"
+                    data-lang-text='{"en": "Order Tracking", "de": "Bestellverfolgung"}'>Order Tracking
+                </button>
             </div>
 
             <div class="shipping-content">

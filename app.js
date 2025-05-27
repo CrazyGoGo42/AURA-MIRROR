@@ -1,52 +1,85 @@
-// Header shrink on scroll effect
 document.addEventListener("DOMContentLoaded", function () {
-  const nav = document.querySelector("nav");
-  const scrollThreshold = 50;
+  // Initialize language switcher
+  initLanguageSwitcher();
+});
 
-  // Function to toggle header class based on scroll position
-  function toggleHeaderClass() {
-    if (window.scrollY > scrollThreshold) {
-      nav.classList.add("scrolled");
-    } else {
-      nav.classList.remove("scrolled");
-    }
-  }
+function initLanguageSwitcher() {
+  // Get saved language preference or default to English
+  const savedLanguage = localStorage.getItem("language") || "en";
 
-  // Initial check on page load
-  toggleHeaderClass();
+  // Apply the saved language
+  applyLanguage(savedLanguage);
 
-  // Add scroll event listener
-  window.addEventListener("scroll", toggleHeaderClass);
-
-  // Smooth scroll for navigation links
-  document.querySelectorAll('nav a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-
-      const targetId = this.getAttribute("href");
-      const targetElement = document.querySelector(targetId);
-
-      if (targetElement) {
-        const navHeight = nav.offsetHeight;
-        const targetPosition =
-          targetElement.getBoundingClientRect().top + window.pageYOffset;
-
-        window.scrollTo({
-          top: targetPosition - navHeight,
-          behavior: "smooth",
-        });
-      }
+  // Add click event listeners to language buttons
+  document.querySelectorAll(".language-btn").forEach((button) => {
+    button.addEventListener("click", function () {
+      const lang = this.getAttribute("data-lang");
+      console.log("Switching to language:", lang); // Debug line
+      applyLanguage(lang);
+      localStorage.setItem("language", lang);
     });
   });
-});
+}
 
-// Parallax effect enhancement
-window.addEventListener("scroll", function () {
-  const parallaxElements = document.querySelectorAll(".parallax-bg");
-  const scrollPosition = window.pageYOffset;
+function applyLanguage(lang) {
+  console.log("Applying language:", lang); // Debug line
 
-  parallaxElements.forEach((element) => {
-    const speed = 0.5;
-    element.style.transform = `translateY(${scrollPosition * speed}px)`;
+  // Update active state on language buttons
+  document.querySelectorAll(".language-btn").forEach((btn) => {
+    if (btn.getAttribute("data-lang") === lang) {
+      btn.classList.add("active");
+    } else {
+      btn.classList.remove("active");
+    }
   });
-});
+
+  // Add HTML lang attribute for accessibility
+  document.documentElement.setAttribute("lang", lang);
+
+  // Show elements for the selected language and hide others
+  document.querySelectorAll("[data-lang-text]").forEach((element) => {
+    try {
+      const translations = JSON.parse(element.getAttribute("data-lang-text"));
+      if (translations[lang]) {
+        element.innerHTML = translations[lang];
+      }
+    } catch (error) {
+      console.error("Error parsing translations for element:", element);
+      console.error(error);
+    }
+  });
+
+  // Handle placeholders for input elements
+  document.querySelectorAll("[data-lang-placeholder]").forEach((element) => {
+    try {
+      const translations = JSON.parse(
+        element.getAttribute("data-lang-placeholder")
+      );
+      if (translations[lang]) {
+        element.placeholder = translations[lang];
+      }
+    } catch (error) {
+      console.error(
+        "Error parsing placeholder translations for element:",
+        element
+      );
+      console.error(error);
+    }
+  });
+
+  // Handle title translations
+  const titleElement = document.querySelector("title[data-lang-text]");
+  if (titleElement) {
+    try {
+      const translations = JSON.parse(
+        titleElement.getAttribute("data-lang-text")
+      );
+      if (translations[lang]) {
+        document.title = translations[lang];
+      }
+    } catch (error) {
+      console.error("Error parsing title translation");
+      console.error(error);
+    }
+  }
+}
