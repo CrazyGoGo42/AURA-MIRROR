@@ -1,4 +1,11 @@
-@import url("https://fonts.cdnfonts.com/css/ogg");
+@font-face {
+  font-family: "CatchyMager";
+  src: url("assets/fonts/CatchyMager.woff2") format("woff2"),
+    url("assets/fonts/CatchyMager.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --cream: #f5f1e9;
@@ -17,7 +24,7 @@
 }
 
 body {
-  font-family: "Ogg", "Times New Roman", serif;
+  font-family: "CatchyMager", serif;
   background-color: var(--cream);
   color: var(--dark-brown);
   line-height: 1.6;
@@ -34,7 +41,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Ogg Display", "Ogg", serif;
+  font-family: "CatchyMager" !important;
   font-weight: 500;
 }
 
@@ -52,15 +59,16 @@ h2 {
 
 h3 {
   font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.7rem;
 }
 
 p {
   margin-bottom: 1rem;
+  font-size: 1.2rem;
 }
 
 button {
-  font-family: "Ogg", serif;
+  font-family: "CatchyMager", serif;
   cursor: pointer;
   border: none;
   transition: var(--transition);
@@ -164,13 +172,13 @@ nav.scrolled .logo {
 
 .hero-image {
   position: absolute;
-  top: 0;
+  top: 10vh;
   right: 0;
   width: 60%;
   height: 100%;
-  background-image: url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80");
+  background-image: url("/assets/images/frontpage/hero.jpeg");
   background-size: cover;
-  background-position: center;
+  background-position: right top;
   border-radius: 0 0 0 100px;
 }
 
@@ -213,8 +221,8 @@ nav.scrolled .logo {
 /* Showcase Section */
 #showcase {
   height: 60vh;
-  background-image: url("https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80");
-  background-size: cover;
+  background-image: url("/assets/images/frontpage/showcase.webp");
+  background-size: fit;
   background-position: center;
   background-attachment: fixed;
   position: relative;
@@ -382,7 +390,7 @@ nav.scrolled .logo {
   padding: 12px;
   border: 1px solid #ddd;
   border-radius: var(--border-radius);
-  font-family: "Ogg", serif;
+  font-family: "CatchyMager", serif;
 }
 
 /* Footer */
@@ -696,7 +704,7 @@ footer {
   padding: 12px;
   border: 1px solid #ddd;
   border-radius: var(--border-radius);
-  font-family: "Ogg", serif;
+  font-family: "CatchyMager", serif;
 }
 
 /* Footer */
@@ -1010,7 +1018,7 @@ footer {
   padding: 12px;
   border: 1px solid #ddd;
   border-radius: var(--border-radius);
-  font-family: "Ogg", serif;
+  font-family: "CatchyMager", serif;
 }
 
 /* Footer */
@@ -1324,7 +1332,7 @@ footer {
   padding: 12px;
   border: 1px solid #ddd;
   border-radius: var(--border-radius);
-  font-family: "Ogg", serif;
+  font-family: "CatchyMager", serif;
 }
 
 /* Footer */
@@ -1638,7 +1646,7 @@ footer {
   padding: 12px;
   border: 1px solid #ddd;
   border-radius: var(--border-radius);
-  font-family: "Ogg", serif;
+  font-family: "CatchyMager", serif;
 }
 
 /* Footer */
@@ -2119,7 +2127,7 @@ footer {
   height: 40px;
   border: none;
   text-align: center;
-  font-family: "Ogg", serif;
+  font-family: "CatchyMager", serif;
   font-size: 1rem;
 }
 
@@ -2130,7 +2138,7 @@ footer {
   color: white;
   border-radius: var(--border-radius);
   font-size: 1rem;
-  font-family: "Ogg", serif;
+  font-family: "CatchyMager", serif;
   cursor: pointer;
   transition: var(--transition);
 }
@@ -2144,7 +2152,40 @@ footer {
   padding: 3rem 5%;
   background-color: white;
 }
-
+.load-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: var(--dark-brown);
+  color: white;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.review-summary {
+  display: flex;
+  gap: 4rem;
+}
+.rating-breakdown {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+.average-rating {
+  text-align: center;
+  flex: 1;
+  color: var(--dark-brown);
+  /* font-size: 2.5rem; */
+  font-weight: bold;
+  line-height: 1;
+  margin-right: 2rem;
+  margin-top: 2rem;
+}
 .tab-navigation {
   display: flex;
   justify-content: center;
@@ -2330,7 +2371,7 @@ footer {
   padding: 0.8rem;
   border: 1px solid #ddd;
   border-radius: var(--border-radius);
-  font-family: "Ogg", serif;
+  font-family: "CatchyMager", serif;
 }
 
 .form-group textarea {
@@ -2467,7 +2508,7 @@ footer {
   padding: 12px;
   border: 1px solid #ddd;
   border-radius: var(--border-radius);
-  font-family: "Ogg", serif;
+  font-family: "CatchyMager", serif;
 }
 
 /* Footer */
@@ -2948,7 +2989,7 @@ footer {
   height: 40px;
   border: none;
   text-align: center;
-  font-family: "Ogg", serif;
+  font-family: "CatchyMager", serif;
   font-size: 1rem;
 }
 
@@ -2959,7 +3000,7 @@ footer {
   color: white;
   border-radius: var(--border-radius);
   font-size: 1rem;
-  font-family: "Ogg", serif;
+  font-family: "CatchyMager", serif;
   cursor: pointer;
   transition: var(--transition);
 }
@@ -3159,7 +3200,7 @@ footer {
   padding: 0.8rem;
   border: 1px solid #ddd;
   border-radius: var(--border-radius);
-  font-family: "Ogg", serif;
+  font-family: "CatchyMager", serif;
 }
 
 .form-group textarea {
@@ -3824,15 +3865,14 @@ footer {
 }
 
 /* About Page Styles */
-.about-intro {
+.about-intro .container {
   padding: 5rem 0;
   background-color: var(--cream);
-}
-
-.about-intro .container {
+  width: 1600px;
   display: flex;
-  gap: 4rem;
   align-items: center;
+  justify-content: center;
+  gap: 4rem;
 }
 
 .about-content {
@@ -3868,7 +3908,68 @@ footer {
   color: var(--dark-brown);
   opacity: 0.8;
 }
-
+.product-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--accent);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.option-button {
+  background-color: var(--dark-brown);
+  color: var(--cream);
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  transition: var(--transition);
+}
+.product-add-cart {
+  background-color: var(--accent);
+  color: white;
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  transition: var(--transition);
+}
+.quantity-button {
+  background-color: var(--dark-brown);
+  color: var(--cream);
+  padding: 12px 15px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.thumbnail-gallery {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .mission-box {
   background-color: var(--dark-brown);
   color: var(--cream);
@@ -4113,7 +4214,7 @@ footer {
   padding: 0.8rem;
   border: 1px solid #ddd;
   border-radius: var(--border-radius);
-  font-family: "Ogg", serif;
+  font-family: "CatchyMager", serif;
 }
 
 .about-contact-form textarea {
@@ -4447,7 +4548,7 @@ footer {
   padding: 12px;
   border: 1px solid #ddd;
   border-radius: var(--border-radius);
-  font-family: "Ogg", serif;
+  font-family: "CatchyMager", serif;
 }
 
 /* Footer */
@@ -4761,7 +4862,7 @@ footer {
   padding: 12px;
   border: 1px solid #ddd;
   border-radius: var(--border-radius);
-  font-family: "Ogg", serif;
+  font-family: "CatchyMager", serif;
 }
 
 /* Footer */
@@ -5075,7 +5176,7 @@ footer {
   padding: 12px;
   border: 1px solid #ddd;
   border-radius: var(--border-radius);
-  font-family: "Ogg", serif;
+  font-family: "CatchyMager", serif;
 }
 
 /* Footer */
@@ -5556,7 +5657,7 @@ footer {
   height: 40px;
   border: none;
   text-align: center;
-  font-family: "Ogg", serif;
+  font-family: "CatchyMager", serif;
   font-size: 1rem;
 }
 
@@ -5567,7 +5668,7 @@ footer {
   color: white;
   border-radius: var(--border-radius);
   font-size: 1rem;
-  font-family: "Ogg", serif;
+  font-family: "CatchyMager", serif;
   cursor: pointer;
   transition: var(--transition);
 }
@@ -5767,7 +5868,7 @@ footer {
   padding: 0.8rem;
   border: 1px solid #ddd;
   border-radius: var(--border-radius);
-  font-family: "Ogg", serif;
+  font-family: "CatchyMager", serif;
 }
 
 .form-group textarea {
@@ -6145,7 +6246,7 @@ footer {
   padding: 12px;
   border: 1px solid #ddd;
   border-radius: var(--border-radius);
-  font-family: "Ogg", serif;
+  font-family: "CatchyMager", serif;
 }
 
 /* Footer */
@@ -6626,7 +6727,7 @@ footer {
   height: 40px;
   border: none;
   text-align: center;
-  font-family: "Ogg", serif;
+  font-family: "CatchyMager", serif;
   font-size: 1rem;
 }
 
@@ -6637,7 +6738,7 @@ footer {
   color: white;
   border-radius: var(--border-radius);
   font-size: 1rem;
-  font-family: "Ogg", serif;
+  font-family: "CatchyMager", serif;
   cursor: pointer;
   transition: var(--transition);
 }
@@ -6837,7 +6938,7 @@ footer {
   padding: 0.8rem;
   border: 1px solid #ddd;
   border-radius: var(--border-radius);
-  font-family: "Ogg", serif;
+  font-family: "CatchyMager", serif;
 }
 
 .form-group textarea {
@@ -7419,7 +7520,7 @@ footer {
   padding: 0.8rem;
   border: 1px solid #ddd;
   border-radius: var(--border-radius);
-  font-family: "Ogg", serif;
+  font-family: "CatchyMager", serif;
 }
 
 .about-contact-form textarea {
@@ -7753,7 +7854,7 @@ footer {
   padding: 12px;
   border: 1px solid #ddd;
   border-radius: var(--border-radius);
-  font-family: "Ogg", serif;
+  font-family: "CatchyMager", serif;
 }
 
 /* Footer */
@@ -8234,7 +8335,7 @@ footer {
   height: 40px;
   border: none;
   text-align: center;
-  font-family: "Ogg", serif;
+  font-family: "CatchyMager", serif;
   font-size: 1rem;
 }
 
@@ -8245,7 +8346,7 @@ footer {
   color: white;
   border-radius: var(--border-radius);
   font-size: 1rem;
-  font-family: "Ogg", serif;
+  font-family: "CatchyMager", serif;
   cursor: pointer;
   transition: var(--transition);
 }
@@ -8416,4 +8517,62 @@ footer {
 .review-text {
   line-height: 1.8;
   color: #444;
+}
+
+/* ...existing code... */
+
+main.sources {
+  padding: 3rem 5%;
+  text-align: left;
+}
+
+#our-sources {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #fff; /* Or your preferred background */
+  border-radius: var(--border-radius);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+#our-sources h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--dark-brown);
+}
+
+#our-sources p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  color: var(--text-dark);
+}
+
+#our-sources ul {
+  list-style: none; /* Removes default bullet points */
+  padding-left: 0;
+}
+
+#our-sources ul li {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+#our-sources ul li::before {
+  content: "✔"; /* Or any other character/icon */
+  position: absolute;
+  left: 0;
+  color: var(--accent); /* Or your preferred color */
+  font-weight: bold;
+}
+
+#our-sources ul li a {
+  color: var(--accent);
+  text-decoration: underline;
+  transition: var(--transition);
+}
+
+#our-sources ul li a:hover {
+  color: var(--dark-brown);
+  text-decoration: none;
 }
