@@ -1,7 +1,7 @@
 @font-face {
   font-family: "CatchyMager";
-  src: url("assets/fonts/CatchyMager.woff2") format("woff2"),
-    url("assets/fonts/CatchyMager.ttf") format("truetype");
+  src: url("./assets/fonts/CatchyMager.woff2") format("woff2"),
+    url("./assets/fonts/CatchyMager.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -221,7 +221,7 @@ nav.scrolled .logo {
 /* Showcase Section */
 #showcase {
   height: 60vh;
-  background-image: url("/assets/images/frontpage/showcase.webp");
+  background-image: url("./assets/images/frontpage/showcase.webp");
   background-size: fit;
   background-position: center;
   background-attachment: fixed;
