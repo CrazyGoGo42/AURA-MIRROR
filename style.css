@@ -176,7 +176,7 @@ nav.scrolled .logo {
   right: 0;
   width: 60%;
   height: 100%;
-  background-image: url("/assets/images/frontpage/hero.jpeg");
+  background-image: url("assets/images/frontpage/hero.jpeg");
   background-size: cover;
   background-position: right top;
   border-radius: 0 0 0 100px;
@@ -2231,7 +2231,16 @@ footer {
   border-collapse: collapse;
   margin: 1.5rem 0;
 }
-
+.product-info .product-badge {
+  display: inline-block;
+  background-color: var(--accent);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  margin-top: 100px;
+}
 .specification-table th,
 .specification-table td {
   padding: 1rem;
@@ -4169,6 +4178,10 @@ footer {
   display: flex;
   gap: 4rem;
   margin-top: 3rem;
+  width: 1600px;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .contact-info {
