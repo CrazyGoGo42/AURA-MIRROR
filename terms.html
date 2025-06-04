@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service | Aura Mirror</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shop.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <script src="app.js" defer></script>
@@ -22,13 +23,47 @@
             <div class="nav-links">
                 <a href="index.html" data-lang-text='{"en": "Home", "de": "Startseite"}'>Home</a>
                 <a href="index.html#features" data-lang-text='{"en": "Features", "de": "Funktionen"}'>Features</a>
-                <a href="shop.html" data-lang-text='{"en": "Shop", "de": "Shop"}'>Shop</a>
+                <a href="shop.html" class="active" data-lang-text='{"en": "Shop", "de": "Shop"}'>Shop</a>
                 <a href="mirrors.html" data-lang-text='{"en": "Mirrors", "de": "Spiegel"}'>Mirrors</a>
-                <a href="about.html" data-lang-text='{"en": "About Us", "de": "Über Uns"}'>About Us</a>
+                <a href="index.html#contact" data-lang-text='{"en": "Contact", "de": "Kontakt"}'>Contact</a>
             </div>
-            <div class="language-switcher">
-                <button class="language-btn" data-lang="en"><img src="assets/images/us-flag.png" alt="English"></button>
-                <button class="language-btn" data-lang="de"><img src="assets/images/de-flag.png" alt="Deutsch"></button>
+            <div style="display: flex; align-items: center;">
+                <div class="language-switcher">
+                    <button class="language-btn" data-lang="en"><img src="assets/images/us-flag.png"
+                            alt="English"></button>
+                    <button class="language-btn" data-lang="de"><img src="assets/images/de-flag.png"
+                            alt="Deutsch"></button>
+                </div>
+                <div class="cart-container">
+                    <div class="cart-icon">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                        <div class="cart-badge">0</div>
+                    </div>
+                    <div class="cart-popup">
+                        <div class="cart-popup-header" data-lang-text='{"en": "Shopping Cart", "de": "Warenkorb"}'>
+                            Shopping Cart
+                        </div>
+                        <div class="cart-popup-items">
+                            <div class="cart-empty"
+                                data-lang-text='{"en": "Your cart is empty", "de": "Ihr Warenkorb ist leer"}'>Your cart
+                                is
+                                empty
+                            </div>
+                        </div>
+                        <div class="cart-popup-footer">
+                            <div class="cart-total">
+                                <span data-lang-text='{"en": "Total:", "de": "Gesamt:"}'>Total:</span>
+                                <span class="total-amount">$0.00</span>
+                            </div>
+                            <div class="cart-popup-buttons">
+                                <a href="cart.html" class="view-cart-btn"
+                                    data-lang-text='{"en": "View Cart", "de": "Warenkorb anzeigen"}'>View Cart</a>
+                                <button class="checkout-btn" data-lang-text='{"en": "Checkout", "de": "Kasse"}'>Checkout
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </nav>
 
@@ -195,31 +230,36 @@
             </div>
             <div class="footer-links">
                 <div class="footer-column">
-                    <h4>Company</h4>
-                    <a href="about.html">About Us</a>
-                    <a href="careers.html">Careers</a>
-                    <a href="press.html">Press</a>
+                    <h4 data-lang-text='{"en": "Company", "de": "Unternehmen"}'>Company</h4>
+                    <a href="about.html" data-lang-text='{"en": "About Us", "de": "Über Uns"}'>About Us</a>
+                    <a href="careers.html" data-lang-text='{"en": "Careers", "de": "Karriere"}'>Careers</a>
+                    <a href="press.html" data-lang-text='{"en": "Press", "de": "Presse"}'>Press</a>
                 </div>
                 <div class="footer-column">
-                    <h4>Products</h4>
-                    <a href="mirrors.html">Aura Mirror</a>
-                    <a href="shop.html">Accessories</a>
-                    <a href="app.html">App</a>
+                    <h4 data-lang-text='{"en": "Products", "de": "Produkte"}'>Products</h4>
+                    <a href="mirrors.html" data-lang-text='{"en": "Aura Mirror", "de": "Aura Spiegel"}'>Aura Mirror</a>
+                    <a href="shop.html" data-lang-text='{"en": "Accessories", "de": "Zubehör"}'>Accessories</a>
+                    <a href="app.html" data-lang-text='{"en": "App", "de": "App"}'>App</a>
                 </div>
                 <div class="footer-column">
-                    <h4>Support</h4>
-                    <a href="faq.html">FAQ</a>
-                    <a href="contact.html">Contact Us</a>
-                    <a href="shipping.html">Shipping</a>
+                    <h4 data-lang-text='{"en": "Support", "de": "Support"}'>Support</h4>
+                    <a href="faq.html" data-lang-text='{"en": "FAQ", "de": "FAQ"}'>FAQ</a>
+                    <a href="contact.html" data-lang-text='{"en": "Contact Us", "de": "Kontakt"}'>Contact Us</a>
+                    <a href="shipping.html" data-lang-text='{"en": "Shipping", "de": "Versand"}'>Shipping</a>
                 </div>
                 <div class="footer-column">
-                    <h4>Legal</h4>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms of Service</a>
+                    <h4 data-lang-text='{"en": "Legal", "de": "Rechtliches"}'>Legal</h4>
+                    <a href="privacy.html"
+                        data-lang-text='{"en": "Privacy Policy", "de": "Datenschutzrichtlinie"}'>Privacy
+                        Policy</a>
+                    <a href="terms.html" data-lang-text='{"en": "Terms of Service", "de": "Nutzungsbedingungen"}'>Terms
+                        of Service</a>
+                    <a href="sources.html" data-lang-text='{"en": "Sources", "de": "Quellen"}'>Sources</a>
                 </div>
             </div>
         </div>
-        <div class="copyright">
+        <div class="copyright"
+            data-lang-text='{"en": "© 2023 Aura Mirror. All rights reserved.", "de": "© 2023 Aura Mirror. Alle Rechte vorbehalten."}'>
             © 2023 Aura Mirror. All rights reserved.
         </div>
     </footer>

@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop | Aura Mirror</title>
+    <title data-lang-text='{"en": "Shop | Aura Mirror", "de": "Shop | Aura Spiegel"}'>Shop | Aura Mirror</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shop.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <script src="app.js" defer></script>
@@ -26,9 +27,43 @@
                 <a href="mirrors.html" data-lang-text='{"en": "Mirrors", "de": "Spiegel"}'>Mirrors</a>
                 <a href="index.html#contact" data-lang-text='{"en": "Contact", "de": "Kontakt"}'>Contact</a>
             </div>
-            <div class="language-switcher">
-                <button class="language-btn" data-lang="en"><img src="assets/images/us-flag.png" alt="English"></button>
-                <button class="language-btn" data-lang="de"><img src="assets/images/de-flag.png" alt="Deutsch"></button>
+            <div style="display: flex; align-items: center;">
+                <div class="language-switcher">
+                    <button class="language-btn" data-lang="en"><img src="assets/images/us-flag.png"
+                            alt="English"></button>
+                    <button class="language-btn" data-lang="de"><img src="assets/images/de-flag.png"
+                            alt="Deutsch"></button>
+                </div>
+                <div class="cart-container">
+                    <div class="cart-icon">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                        <div class="cart-badge">0</div>
+                    </div>
+                    <div class="cart-popup">
+                        <div class="cart-popup-header" data-lang-text='{"en": "Shopping Cart", "de": "Warenkorb"}'>
+                            Shopping Cart
+                        </div>
+                        <div class="cart-popup-items">
+                            <div class="cart-empty"
+                                data-lang-text='{"en": "Your cart is empty", "de": "Ihr Warenkorb ist leer"}'>Your cart
+                                is
+                                empty
+                            </div>
+                        </div>
+                        <div class="cart-popup-footer">
+                            <div class="cart-total">
+                                <span data-lang-text='{"en": "Total:", "de": "Gesamt:"}'>Total:</span>
+                                <span class="total-amount">$0.00</span>
+                            </div>
+                            <div class="cart-popup-buttons">
+                                <a href="cart.html" class="view-cart-btn"
+                                    data-lang-text='{"en": "View Cart", "de": "Warenkorb anzeigen"}'>View Cart</a>
+                                <button class="checkout-btn" data-lang-text='{"en": "Checkout", "de": "Kasse"}'>Checkout
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </nav>
 
@@ -97,35 +132,53 @@
         <div class="product-grid">
             <!-- Skincare Products -->
             <div class="product-card" data-category="skincare" data-price="45">
-                <div class="product-badge">Best Seller</div>
+                <div class="product-badge" data-lang-text='{"en": "Best Seller", "de": "Bestseller"}'>Best Seller</div>
                 <div class="product-image"
                     style="background-image: url('assets/images/7fab21a708716ad5965058f91293f10c.jpg')">
                 </div>
-                <h3>Hydrating Serum</h3>
-                <p>Advanced moisture-locking formula with hyaluronic acid</p>
+                <h3 data-lang-text='{"en": "Hydrating Serum", "de": "Feuchtigkeitsspendendes Serum"}'>Hydrating Serum
+                </h3>
+                <p
+                    data-lang-text='{"en": "Advanced moisture-locking formula with hyaluronic acid", "de": "Fortschrittliche feuchtigkeitsspeichernde Formel mit Hyaluronsäure"}'>
+                    Advanced moisture-locking formula
+                    with hyaluronic acid
+                </p>
                 <span class="price">$45</span>
-                <button class="shop-button">Add to Cart</button>
+                <button class="shop-button" data-lang-text='{"en": "Add to Cart", "de": "In den Warenkorb"}'>Add to
+                    Cart</button>
             </div>
 
             <div class="product-card" data-category="skincare" data-price="38">
                 <div class="product-image"
                     style="background-image: url('https://images.unsplash.com/photo-1556227834-09f1de7a7d14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80')">
                 </div>
-                <h3>Balancing Toner</h3>
-                <p>Restores skin's natural pH while removing impurities</p>
+                <h3 data-lang-text='{"en": "Balancing Toner", "de": "Ausgleichendes Gesichtswasser"}'>Balancing Toner
+                </h3>
+                <p data-lang-text='{"en": "Restores skin\' s natural pH while removing impurities", "de"
+                    : "Stellt den natürlichen pH-Wert der Haut wieder her und entfernt Unreinheiten" }'>Restores skin's
+                    natural pH
+                    while removing impurities
+                </p>
                 <span class="price">$38</span>
-                <button class="shop-button">Add to Cart</button>
+                <button class="shop-button" data-lang-text='{"en": "Add to Cart", "de": "In den Warenkorb"}'>Add to
+                    Cart</button>
             </div>
 
             <div class="product-card" data-category="skincare" data-price="65">
-                <div class="product-badge">New</div>
+                <div class="product-badge" data-lang-text='{"en": "New", "de": "Neu"}'>New</div>
                 <div class="product-image"
                     style="background-image: url('assets/images/214df10700ca22befec2fb63622a864f.jpg')">
                 </div>
-                <h3>Rejuvenating Night Cream</h3>
-                <p>Anti-aging formula that works while you sleep</p>
+                <h3 data-lang-text='{"en": "Rejuvenating Night Cream", "de": "Verjüngende Nachtcreme"}'>Rejuvenating
+                    Night Cream
+                </h3>
+                <p
+                    data-lang-text='{"en": "Anti-aging formula that works while you sleep", "de": "Anti-Aging-Formel, die während des Schlafs wirkt"}'>
+                    Anti-aging formula that works while you sleep
+                </p>
                 <span class="price">$65</span>
-                <button class="shop-button">Add to Cart</button>
+                <button class="shop-button" data-lang-text='{"en": "Add to Cart", "de": "In den Warenkorb"}'>Add to
+                    Cart</button>
             </div>
 
             <!-- Makeup Products -->
@@ -133,31 +186,46 @@
                 <div class="product-image"
                     style="background-image: url('assets/images/874d7b2ffaa07f0221773a3850754088.jpg')">
                 </div>
-                <h3>Luminous Foundation</h3>
-                <p>Breathable coverage with a natural glow finish</p>
+                <h3 data-lang-text='{"en": "Luminous Foundation", "de": "Strahlende Foundation"}'>Luminous Foundation
+                </h3>
+                <p
+                    data-lang-text='{"en": "Breathable coverage with a natural glow finish", "de": "Atmungsaktive Abdeckung mit natürlichem Glanz-Finish"}'>
+                    Breathable coverage with a natural glow finish
+                </p>
                 <span class="price">$52</span>
-                <button class="shop-button">Add to Cart</button>
+                <button class="shop-button" data-lang-text='{"en": "Add to Cart", "de": "In den Warenkorb"}'>Add to
+                    Cart</button>
             </div>
 
             <div class="product-card" data-category="makeup" data-price="36">
-                <div class="product-badge">Best Seller</div>
+                <div class="product-badge" data-lang-text='{"en": "Best Seller", "de": "Bestseller"}'>Best Seller</div>
                 <div class="product-image"
                     style="background-image: url('https://images.unsplash.com/photo-1627384113743-6bd5a479fffd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')">
                 </div>
-                <h3>Precision Eyeliner</h3>
-                <p>Waterproof formula with ultra-fine tip for perfect lines</p>
+                <h3 data-lang-text='{"en": "Precision Eyeliner", "de": "Präzisions-Eyeliner"}'>Precision Eyeliner
+                </h3>
+                <p
+                    data-lang-text='{"en": "Waterproof formula with ultra-fine tip for perfect lines", "de": "Wasserfeste Formel mit ultrafeine Spitze für perfekte Linien"}'>
+                    Waterproof formula with ultra-fine tip
+                    for perfect lines
+                </p>
                 <span class="price">$36</span>
-                <button class="shop-button">Add to Cart</button>
+                <button class="shop-button" data-lang-text='{"en": "Add to Cart", "de": "In den Warenkorb"}'>Add to
+                    Cart</button>
             </div>
 
             <div class="product-card" data-category="makeup" data-price="48">
                 <div class="product-image"
                     style="background-image: url('assets/images/8495b20e24caa11af192c46aa9c42dcd.jpg')">
                 </div>
-                <h3>Velvet Lip Color</h3>
-                <p>Moisturizing matte lipstick with 24-hour wear</p>
+                <h3 data-lang-text='{"en": "Velvet Lip Color", "de": "Samt-Lippenfarbe"}'>Velvet Lip Color</h3>
+                <p
+                    data-lang-text='{"en": "Moisturizing matte lipstick with 24-hour wear", "de": "Feuchtigkeitsspendender matter Lippenstift mit 24-Stunden-Halt"}'>
+                    Moisturizing matte lipstick with 24-hour wear
+                </p>
                 <span class="price">$48</span>
-                <button class="shop-button">Add to Cart</button>
+                <button class="shop-button" data-lang-text='{"en": "Add to Cart", "de": "In den Warenkorb"}'>Add to
+                    Cart</button>
             </div>
 
             <!-- Hair Care Products -->
@@ -165,42 +233,62 @@
                 <div class="product-image"
                     style="background-image: url('https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')">
                 </div>
-                <h3>Repairing Hair Mask</h3>
-                <p>Deep conditioning treatment for damaged hair</p>
+                <h3 data-lang-text='{"en": "Repairing Hair Mask", "de": "Reparierende Haarmaske"}'>Repairing Hair
+                    Mask
+                </h3>
+                <p
+                    data-lang-text='{"en": "Deep conditioning treatment for damaged hair", "de": "Tiefenpflegebehandlung für geschädigtes Haar"}'>
+                    Deep conditioning treatment for damaged hair
+                </p>
                 <span class="price">$42</span>
-                <button class="shop-button">Add to Cart</button>
+                <button class="shop-button" data-lang-text='{"en": "Add to Cart", "de": "In den Warenkorb"}'>Add to
+                    Cart</button>
             </div>
 
             <div class="product-card" data-category="haircare" data-price="38">
                 <div class="product-image"
                     style="background-image: url('https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')">
                 </div>
-                <h3>Volumizing Shampoo</h3>
-                <p>Adds body and fullness without weighing hair down</p>
+                <h3 data-lang-text='{"en": "Volumizing Shampoo", "de": "Volumen-Shampoo"}'>Volumizing Shampoo</h3>
+                <p
+                    data-lang-text='{"en": "Adds body and fullness without weighing hair down", "de": "Verleiht Fülle und Volumen, ohne das Haar zu beschweren"}'>
+                    Adds body and fullness without weighing hair
+                    down
+                </p>
                 <span class="price">$38</span>
-                <button class="shop-button">Add to Cart</button>
+                <button class="shop-button" data-lang-text='{"en": "Add to Cart", "de": "In den Warenkorb"}'>Add to
+                    Cart</button>
             </div>
 
             <!-- Body Care Products -->
             <div class="product-card" data-category="bodycare" data-price="55">
-                <div class="product-badge">New</div>
+                <div class="product-badge" data-lang-text='{"en": "New", "de": "Neu"}'>New</div>
                 <div class="product-image"
                     style="background-image: url('https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')">
                 </div>
-                <h3>Firming Body Lotion</h3>
-                <p>Tightens and moisturizes for smoother skin</p>
+                <h3 data-lang-text='{"en": "Firming Body Lotion", "de": "Straffende Körperlotion"}'>Firming Body
+                    Lotion
+                </h3>
+                <p
+                    data-lang-text='{"en": "Tightens and moisturizes for smoother skin", "de": "Strafft und spendet Feuchtigkeit für glattere Haut"}'>
+                    Tightens and moisturizes for smoother skin
+                </p>
                 <span class="price">$55</span>
-                <button class="shop-button">Add to Cart</button>
+                <button class="shop-button" data-lang-text='{"en": "Add to Cart", "de": "In den Warenkorb"}'>Add to
+                    Cart</button>
             </div>
 
             <div class="product-card" data-category="bodycare" data-price="32">
                 <div class="product-image"
                     style="background-image: url('assets/images/bff48a59ea45dd8e5dbd2ce73332b156.jpg')">
                 </div>
-                <h3>Exfoliating Scrub</h3>
-                <p>Gentle polish for smooth, radiant skin</p>
+                <h3 data-lang-text='{"en": "Exfoliating Scrub", "de": "Peeling-Scrub"}'>Exfoliating Scrub</h3>
+                <p
+                    data-lang-text='{"en": "Gentle polish for smooth, radiant skin", "de": "Sanftes Peeling für glatte, strahlende Haut"}'>
+                    Gentle polish for smooth, radiant skin</p>
                 <span class="price">$32</span>
-                <button class="shop-button">Add to Cart</button>
+                <button class="shop-button" data-lang-text='{"en": "Add to Cart", "de": "In den Warenkorb"}'>Add to
+                    Cart</button>
             </div>
 
             <!-- Wellness Products -->
@@ -208,21 +296,34 @@
                 <div class="product-image"
                     style="background-image: url('https://images.unsplash.com/photo-1519415387722-a1c3bbef716c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')">
                 </div>
-                <h3>Sleep Enhancing Diffuser</h3>
-                <p>Aromatherapy blend for restful nights</p>
+                <h3 data-lang-text='{"en": "Sleep Enhancing Diffuser", "de": "Schlaffördernder Diffuser"}'>Sleep
+                    Enhancing
+                    Diffuser
+                </h3>
+                <p
+                    data-lang-text='{"en": "Aromatherapy blend for restful nights", "de": "Aromatherapie-Mischung für erholsame Nächte"}'>
+                    Aromatherapy blend for restful nights</p>
                 <span class="price">$85</span>
-                <button class="shop-button">Add to Cart</button>
+                <button class="shop-button" data-lang-text='{"en": "Add to Cart", "de": "In den Warenkorb"}'>Add to
+                    Cart</button>
             </div>
 
             <div class="product-card" data-category="wellness" data-price="65">
-                <div class="product-badge">Popular</div>
+                <div class="product-badge" data-lang-text='{"en": "Popular", "de": "Beliebt"}'>Popular</div>
                 <div class="product-image"
-                    style="background-image: url('assets/images/f9849f477de8d851d1ff9a656fdcf451.jpg')">
+                    style="background-image: url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80')">
                 </div>
-                <h3>Beauty Supplement Pack</h3>
-                <p>30-day supply of skin, hair and nail boosting nutrients</p>
+                <h3 data-lang-text='{"en": "Beauty Supplement Pack", "de": "Schönheits-Nahrungsergänzungspaket"}'>Beauty
+                    Supplement Pack
+                </h3>
+                <p
+                    data-lang-text='{"en": "30-day supply of skin, hair and nail boosting nutrients", "de": "30-Tage-Versorgung mit nährstoffreichen Wirkstoffen für Haut, Haare und Nägel"}'>
+                    30-day supply of skin,
+                    hair and nail boosting nutrients
+                </p>
                 <span class="price">$65</span>
-                <button class="shop-button">Add to Cart</button>
+                <button class="shop-button" data-lang-text='{"en": "Add to Cart", "de": "In den Warenkorb"}'>Add to
+                    Cart</button>
             </div>
 
             <!-- Accessories -->
@@ -230,36 +331,53 @@
                 <div class="product-image"
                     style="background-image: url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80')">
                 </div>
-                <h3>Aura Mirror Stand</h3>
-                <p>Elegant stand for your Aura Mirror with adjustable angles</p>
+                <h3 data-lang-text='{"en": "Aura Mirror Stand", "de": "Aura Spiegel Ständer"}'>Aura Mirror Stand</h3>
+                <p
+                    data-lang-text='{"en": "Elegant stand for your Aura Mirror with adjustable angles", "de": "Eleganter Ständer für Ihren Aura Spiegel mit verstellbaren Winkeln"}'>
+                    Elegant stand for your Aura Mirror
+                    with adjustable angles
+                </p>
                 <span class="price">$120</span>
-                <button class="shop-button">Add to Cart</button>
+                <button class="shop-button" data-lang-text='{"en": "Add to Cart", "de": "In den Warenkorb"}'>Add to
+                    Cart</button>
             </div>
 
             <div class="product-card" data-category="accessories" data-price="95">
-                <div class="product-badge">Limited</div>
+                <div class="product-badge" data-lang-text='{"en": "Limited", "de": "Limitiert"}'>Limited</div>
                 <div class="product-image"
                     style="background-image: url('https://images.unsplash.com/photo-1600612253971-422e7f7faeb6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80')">
                 </div>
-                <h3>Beauty Organizer</h3>
-                <p>Stylish storage solution for all your beauty essentials</p>
+                <h3 data-lang-text='{"en": "Beauty Organizer", "de": "Beauty-Organizer"}'>Beauty Organizer</h3>
+                <p
+                    data-lang-text='{"en": "Stylish storage solution for all your beauty essentials", "de": "Stilvolle Aufbewahrungslösung für alle Ihre Beauty-Essentials"}'>
+                    Stylish storage solution for all your
+                    beauty essentials
+                </p>
                 <span class="price">$95</span>
-                <button class="shop-button">Add to Cart</button>
+                <button class="shop-button" data-lang-text='{"en": "Add to Cart", "de": "In den Warenkorb"}'>Add to
+                    Cart</button>
             </div>
         </div>
     </section>
 
     <section class="featured-products">
-        <h2>Trending Now</h2>
+        <h2 data-lang-text='{"en": "Trending Now", "de": "Jetzt im Trend"}'>Trending Now</h2>
         <div class="featured-grid">
             <div class="featured-card">
                 <div class="featured-image"
                     style="background-image: url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80')">
                 </div>
                 <div class="featured-content">
-                    <h3>Limited Edition Collection</h3>
-                    <p>Exclusive products curated for the season</p>
-                    <button class="secondary-button dark">Shop Collection</button>
+                    <h3 data-lang-text='{"en": "Limited Edition Collection", "de": "Limitierte Edition Kollektion"}'>
+                        Limited
+                        Edition Collection
+                    </h3>
+                    <p
+                        data-lang-text='{"en": "Exclusive products curated for the season", "de": "Exklusive Produkte, kuratiert für die Saison"}'>
+                        Exclusive products curated for the season
+                    </p>
+                    <button class="secondary-button dark"
+                        data-lang-text='{"en": "Shop Collection", "de": "Kollektion kaufen"}'>Shop Collection</button>
                 </div>
             </div>
             <div class="featured-card">
@@ -267,9 +385,14 @@
                     style="background-image: url('assets/images/fdf4ea48520098e2e43897e2edc140ff.jpg')">
                 </div>
                 <div class="featured-content">
-                    <h3>Mirror Companions</h3>
-                    <p>Products designed to enhance your Aura Mirror experience</p>
-                    <button class="secondary-button dark">Explore</button>
+                    <h3 data-lang-text='{"en": "Mirror Companions", "de": "Spiegel-Begleiter"}'>Mirror Companions</h3>
+                    <p
+                        data-lang-text='{"en": "Products designed to enhance your Aura Mirror experience", "de": "Produkte, die Ihr Aura Mirror-Erlebnis verbessern"}'>
+                        Products designed to enhance your Aura Mirror
+                        experience
+                    </p>
+                    <button class="secondary-button dark"
+                        data-lang-text='{"en": "Explore", "de": "Erkunden"}'>Explore</button>
                 </div>
             </div>
         </div>
@@ -282,31 +405,34 @@
             </div>
             <div class="footer-links">
                 <div class="footer-column">
-                    <h4>Company</h4>
-                    <a href="about.html">About Us</a>
-                    <a href="careers.html">Careers</a>
-                    <a href="press.html">Press</a>
+                    <h4 data-lang-text='{"en": "Company", "de": "Unternehmen"}'>Company</h4>
+                    <a href="about.html" data-lang-text='{"en": "About Us", "de": "Über Uns"}'>About Us</a>
+                    <a href="careers.html" data-lang-text='{"en": "Careers", "de": "Karriere"}'>Careers</a>
+                    <a href="press.html" data-lang-text='{"en": "Press", "de": "Presse"}'>Press</a>
                 </div>
                 <div class="footer-column">
-                    <h4>Products</h4>
-                    <a href="mirrors.html">Aura Mirror</a>
-                    <a href="shop.html">Accessories</a>
-                    <a href="app.html">App</a>
+                    <h4 data-lang-text='{"en": "Products", "de": "Produkte"}'>Products</h4>
+                    <a href="mirrors.html" data-lang-text='{"en": "Aura Mirror", "de": "Aura Spiegel"}'>Aura Mirror</a>
+                    <a href="shop.html" data-lang-text='{"en": "Accessories", "de": "Zubehör"}'>Accessories</a>
+                    <a href="app.html" data-lang-text='{"en": "App", "de": "App"}'>App</a>
                 </div>
                 <div class="footer-column">
-                    <h4>Support</h4>
-                    <a href="faq.html">FAQ</a>
-                    <a href="contact.html">Contact Us</a>
-                    <a href="shipping.html">Shipping</a>
+                    <h4 data-lang-text='{"en": "Support", "de": "Support"}'>Support</h4>
+                    <a href="faq.html" data-lang-text='{"en": "FAQ", "de": "FAQ"}'>FAQ</a>
+                    <a href="contact.html" data-lang-text='{"en": "Contact Us", "de": "Kontakt"}'>Contact Us</a>
+                    <a href="shipping.html" data-lang-text='{"en": "Shipping", "de": "Versand"}'>Shipping</a>
                 </div>
                 <div class="footer-column">
-                    <h4>Legal</h4>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms of Service</a>
+                    <h4 data-lang-text='{"en": "Legal", "de": "Rechtliches"}'>Legal</h4>
+                    <a href="privacy.html"
+                        data-lang-text='{"en": "Privacy Policy", "de": "Datenschutzrichtlinie"}'>Privacy Policy</a>
+                    <a href="terms.html" data-lang-text='{"en": "Terms of Service", "de": "Nutzungsbedingungen"}'>Terms
+                        of Service</a>
                 </div>
             </div>
         </div>
-        <div class="copyright">
+        <div class="copyright"
+            data-lang-text='{"en": "© 2023 Aura Mirror. All rights reserved.", "de": "© 2023 Aura Mirror. Alle Rechte vorbehalten."}'>
             © 2023 Aura Mirror. All rights reserved.
         </div>
     </footer>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aura Mirror | Smart Beauty Technology</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shop.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <script src="app.js" defer></script>
@@ -20,15 +21,49 @@
                 <a href="index.html" class="logo-link">AURA MIRROR</a>
             </div>
             <div class="nav-links">
-                <a href="index.html" class="active" data-lang-text='{"en": "Home", "de": "Startseite"}'>Home</a>
-                <a href="#features" data-lang-text='{"en": "Features", "de": "Funktionen"}'>Features</a>
-                <a href="shop.html" data-lang-text='{"en": "Shop", "de": "Shop"}'>Shop</a>
+                <a href="index.html" data-lang-text='{"en": "Home", "de": "Startseite"}'>Home</a>
+                <a href="index.html#features" data-lang-text='{"en": "Features", "de": "Funktionen"}'>Features</a>
+                <a href="shop.html" class="active" data-lang-text='{"en": "Shop", "de": "Shop"}'>Shop</a>
                 <a href="mirrors.html" data-lang-text='{"en": "Mirrors", "de": "Spiegel"}'>Mirrors</a>
-                <a href="#contact" data-lang-text='{"en": "Contact", "de": "Kontakt"}'>Contact</a>
+                <a href="index.html#contact" data-lang-text='{"en": "Contact", "de": "Kontakt"}'>Contact</a>
             </div>
-            <div class="language-switcher">
-                <button class="language-btn" data-lang="en"><img src="assets/images/us-flag.png" alt="English"></button>
-                <button class="language-btn" data-lang="de"><img src="assets/images/de-flag.png" alt="Deutsch"></button>
+            <div style="display: flex; align-items: center;">
+                <div class="language-switcher">
+                    <button class="language-btn" data-lang="en"><img src="assets/images/us-flag.png"
+                            alt="English"></button>
+                    <button class="language-btn" data-lang="de"><img src="assets/images/de-flag.png"
+                            alt="Deutsch"></button>
+                </div>
+                <div class="cart-container">
+                    <div class="cart-icon">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                        <div class="cart-badge">0</div>
+                    </div>
+                    <div class="cart-popup">
+                        <div class="cart-popup-header" data-lang-text='{"en": "Shopping Cart", "de": "Warenkorb"}'>
+                            Shopping Cart
+                        </div>
+                        <div class="cart-popup-items">
+                            <div class="cart-empty"
+                                data-lang-text='{"en": "Your cart is empty", "de": "Ihr Warenkorb ist leer"}'>Your cart
+                                is
+                                empty
+                            </div>
+                        </div>
+                        <div class="cart-popup-footer">
+                            <div class="cart-total">
+                                <span data-lang-text='{"en": "Total:", "de": "Gesamt:"}'>Total:</span>
+                                <span class="total-amount">$0.00</span>
+                            </div>
+                            <div class="cart-popup-buttons">
+                                <a href="cart.html" class="view-cart-btn"
+                                    data-lang-text='{"en": "View Cart", "de": "Warenkorb anzeigen"}'>View Cart</a>
+                                <button class="checkout-btn" data-lang-text='{"en": "Checkout", "de": "Kasse"}'>Checkout
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </nav>
 
@@ -63,32 +98,44 @@
 
             <div class="feature-card">
                 <span class="material-symbols-outlined">shopping_bag</span>
-                <h3>Personalized Product Recommendations</h3>
-                <p>Get tailored skincare and makeup suggestions based on your unique needs.</p>
+                <h3
+                    data-lang-text='{"en": "Personalized Product Recommendations", "de": "Personalisierte Produktempfehlungen"}'>
+                    Personalized Product Recommendations</h3>
+                <p
+                    data-lang-text='{"en": "Get tailored skincare and makeup suggestions based on your unique needs.", "de": "Erhalten Sie maßgeschneiderte Hautpflege- und Make-up-Vorschläge basierend auf Ihren individuellen Bedürfnissen."}'>
+                    Get tailored skincare and makeup suggestions based on your unique needs.</p>
             </div>
 
             <div class="feature-card">
                 <span class="material-symbols-outlined">filter_vintage</span>
-                <h3>AR Makeup Preview</h3>
-                <p>Try on makeup looks in real-time, directly on your mirror — no app needed.</p>
+                <h3 data-lang-text='{"en": "AR Makeup Preview", "de": "AR Make-up Vorschau"}'>AR Makeup Preview</h3>
+                <p
+                    data-lang-text='{"en": "Try on makeup looks in real-time, directly on your mirror — no app needed.", "de": "Probieren Sie Make-up-Looks in Echtzeit direkt auf Ihrem Spiegel aus — keine App erforderlich."}'>
+                    Try on makeup looks in real-time, directly on your mirror — no app needed.</p>
             </div>
 
             <div class="feature-card">
                 <span class="material-symbols-outlined">wb_twilight</span>
-                <h3>Moodlight System</h3>
-                <p>Adjusts lighting to match your mood or test makeup in different environments.</p>
+                <h3 data-lang-text='{"en": "Moodlight System", "de": "Stimmungslicht-System"}'>Moodlight System</h3>
+                <p
+                    data-lang-text='{"en": "Adjusts lighting to match your mood or test makeup in different environments.", "de": "Passt die Beleuchtung an Ihre Stimmung an oder testet Make-up in verschiedenen Umgebungen."}'>
+                    Adjusts lighting to match your mood or test makeup in different environments.</p>
             </div>
 
             <div class="feature-card">
                 <span class="material-symbols-outlined">mic</span>
-                <h3>Voice Assistant</h3>
-                <p>"Aura, how do I look today?" — Get compliments and practical advice from your mirror.</p>
+                <h3 data-lang-text='{"en": "Voice Assistant", "de": "Sprachassistent"}'>Voice Assistant</h3>
+                <p
+                    data-lang-text='{"en": "\"Aura, how do I look today?\" — Get compliments and practical advice from your mirror.", "de": "\"Aura, wie sehe ich heute aus?\" — Erhalten Sie Komplimente und praktische Ratschläge von Ihrem Spiegel."}'>
+                    „Aura, how do I look today?" — Get compliments and practical advice from your mirror.</p>
             </div>
 
             <div class="feature-card">
                 <span class="material-symbols-outlined">update</span>
-                <h3>Wellness Reminders</h3>
-                <p>Gentle nudges about sleep, hydration, and self-care when you need them most.</p>
+                <h3 data-lang-text='{"en": "Wellness Reminders", "de": "Wellness-Erinnerungen"}'>Wellness Reminders</h3>
+                <p
+                    data-lang-text='{"en": "Gentle nudges about sleep, hydration, and self-care when you need them most.", "de": "Sanfte Erinnerungen an Schlaf, Flüssigkeitszufuhr und Selbstpflege, wenn Sie sie am meisten brauchen."}'>
+                    Gentle nudges about sleep, hydration, and self-care when you need them most.</p>
             </div>
         </div>
     </section>
