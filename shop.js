@@ -366,4 +366,150 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+  // Gentle parallax effect for shop hero
+  function initShopParallax() {
+    const shopHero = document.querySelector(".shop-hero");
+
+    if (!shopHero) return;
+
+    function updateShopParallax() {
+      const scrollTop = window.pageYOffset;
+      const heroRect = shopHero.getBoundingClientRect();
+      const heroTop = heroRect.top + scrollTop;
+
+      // Only apply parallax when hero is in viewport
+      if (heroRect.bottom >= 0 && heroRect.top <= window.innerHeight) {
+        const yPos = (scrollTop - heroTop) * 0.3;
+        const decorations = shopHero.querySelector(".shop-hero-decorations");
+        const icon = shopHero.querySelector(".shop-hero-icon");
+
+        if (decorations) {
+          decorations.style.transform = `translateY(${yPos}px)`;
+        }
+
+        if (icon) {
+          icon.style.transform = `translateY(${yPos * 0.5}px) scale(1)`;
+        }
+      }
+    }
+
+    let ticking = false;
+
+    function requestTick() {
+      if (!ticking) {
+        requestAnimationFrame(updateShopParallax);
+        ticking = true;
+      }
+    }
+
+    function handleScroll() {
+      requestTick();
+      ticking = false;
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    updateShopParallax(); // Initial call
+  }
+
+  // Initialize shop parallax
+  initShopParallax();
+
+  // Enhanced scroll animations with Intersection Observer
+  function initScrollAnimations() {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = "running";
+          entry.target.classList.add("animate-in");
+        }
+      });
+    }, observerOptions);
+
+    // Observe product cards
+    const productCards = document.querySelectorAll(".product-card");
+    productCards.forEach((card) => {
+      card.style.animationPlayState = "paused";
+      observer.observe(card);
+    });
+
+    // Observe featured cards
+    const featuredCards = document.querySelectorAll(".featured-card");
+    featuredCards.forEach((card) => {
+      observer.observe(card);
+    });
+  }
+
+  // Initialize scroll animations
+  initScrollAnimations();
+
+  // Enhanced product card interactions
+  function enhanceProductCards() {
+    const productCards = document.querySelectorAll(".product-card");
+
+    productCards.forEach((card) => {
+      // Add loading shimmer effect
+      card.addEventListener("mouseenter", function () {
+        this.style.setProperty("--shimmer-angle", "0deg");
+        setTimeout(() => {
+          this.style.setProperty("--shimmer-angle", "90deg");
+        }, 100);
+      });
+
+      // Add ripple effect to shop buttons
+      const button = card.querySelector(".shop-button");
+      if (button) {
+        button.addEventListener("click", function (e) {
+          const ripple = document.createElement("div");
+          const rect = this.getBoundingClientRect();
+          const size = Math.max(rect.width, rect.height);
+          const x = e.clientX - rect.left - size / 2;
+          const y = e.clientY - rect.top - size / 2;
+
+          ripple.style.cssText = `
+            position: absolute;
+            width: ${size}px;
+            height: ${size}px;
+            left: ${x}px;
+            top: ${y}px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple 0.6s ease-out;
+            pointer-events: none;
+          `;
+
+          this.appendChild(ripple);
+
+          setTimeout(() => {
+            ripple.remove();
+          }, 600);
+        });
+      }
+    });
+  }
+
+  // Initialize enhanced interactions
+  enhanceProductCards();
+
+  // Add CSS for ripple animation
+  const style = document.createElement("style");
+  style.textContent = `
+    @keyframes ripple {
+      to {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+    
+    .animate-in {
+      animation-play-state: running !important;
+    }
+  `;
+  document.head.appendChild(style);
 });
