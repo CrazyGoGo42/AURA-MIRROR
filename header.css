@@ -1,0 +1,387 @@
+/* Font Face Declarations */
+@font-face {
+  font-family: "CatchyMager";
+  src: url("./assets/fonts/CatchyMager.woff2") format("woff2"),
+    url("./assets/fonts/CatchyMager.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Header and Navigation */
+header {
+  position: relative;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  transition: all 0.4s ease;
+  background-color: rgba(245, 241, 233, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0);
+}
+
+/* New class for shrunk header */
+nav.scrolled {
+  padding: 0.8rem 5%;
+  background-color: rgba(245, 241, 233, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo transition */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: var(--dark-brown);
+  transition: var(--transition);
+  font-family: "CatchyMager", serif;
+}
+
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav.scrolled .logo {
+  font-size: 1.3rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
+  margin-left: 2rem;
+  font-size: 1rem;
+  color: var(--dark-brown);
+  transition: var(--transition);
+  font-family: "CatchyMager", serif;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a.active {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* Language Switcher */
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 1rem;
+}
+
+.language-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 50%;
+  transition: var(--transition);
+  opacity: 0.6;
+  border: 2px solid transparent;
+}
+
+.language-btn:hover {
+  opacity: 0.8;
+}
+
+.language-btn.active {
+  opacity: 1;
+  border: 2px solid #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.language-btn img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Cart Icon and Popup */
+.cart-container {
+  position: relative;
+  margin-left: 1rem;
+}
+
+.cart-icon {
+  position: relative;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: var(--transition);
+  background-color: transparent;
+  color: var(--dark-brown);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-icon:hover {
+  background-color: rgba(200, 162, 125, 0.1);
+  color: var(--accent);
+}
+
+.cart-icon .material-symbols-outlined {
+  font-size: 1.5rem;
+  display: block;
+}
+
+.cart-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--accent);
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  min-width: 18px;
+  font-family: "CatchyMager", serif;
+}
+
+.cart-popup {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 350px;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  margin-top: 0.5rem;
+  overflow: hidden;
+}
+
+.cart-container:hover .cart-popup {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.cart-popup-header {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  font-weight: bold;
+  color: var(--dark-brown);
+  font-family: "CatchyMager", serif;
+  background-color: #fafafa;
+}
+
+.cart-popup-items {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.cart-popup-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.cart-popup-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item-image {
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.cart-item-details {
+  flex: 1;
+}
+
+.cart-item-name {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+  font-family: "CatchyMager", serif;
+}
+
+.cart-item-price {
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 0.85rem;
+  font-family: "CatchyMager", serif;
+}
+
+.cart-item-quantity {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.quantity-btn {
+  background-color: var(--dark-brown);
+  color: white;
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-family: "CatchyMager", serif;
+  transition: var(--transition);
+}
+
+.quantity-btn:hover {
+  background-color: var(--accent);
+}
+
+.cart-popup-footer {
+  padding: 1rem;
+  border-top: 1px solid #eee;
+  background-color: #f9f9f9;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: var(--dark-brown);
+  font-family: "CatchyMager", serif;
+}
+
+.cart-popup-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.view-cart-btn,
+.checkout-btn {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  font-family: "CatchyMager", serif;
+  border: none;
+  cursor: pointer;
+}
+
+.view-cart-btn {
+  background-color: transparent;
+  color: var(--dark-brown);
+  border: 1px solid var(--dark-brown) !important;
+}
+
+.view-cart-btn:hover {
+  background-color: var(--dark-brown);
+  color: white;
+}
+
+.checkout-btn {
+  background-color: var(--accent);
+  color: white;
+}
+
+.checkout-btn:hover {
+  background-color: var(--dark-brown);
+}
+
+.cart-empty {
+  padding: 2rem;
+  text-align: center;
+  color: #666;
+  font-family: "CatchyMager", serif;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 5%;
+  }
+
+  nav.scrolled {
+    padding: 0.8rem 5%;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    margin-left: 0;
+  }
+
+  .cart-popup {
+    width: 300px;
+    right: -50px;
+  }
+
+  .language-switcher {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .cart-popup {
+    width: 280px;
+    right: -100px;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+}

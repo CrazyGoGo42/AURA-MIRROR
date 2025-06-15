@@ -78,25 +78,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Add to cart button
-  const addToCartButton = document.querySelector(".product-add-cart");
-
-  if (addToCartButton) {
-    addToCartButton.addEventListener("click", function () {
-      const productName =
-        document.querySelector(".product-info h1").textContent;
-      const quantity = document.querySelector(".quantity-input").value;
-      const finish = document.querySelector(
-        ".option-group:first-child .option-button.active"
-      ).textContent;
-      const size = document.querySelector(
-        ".option-group:last-child .option-button.active"
-      ).textContent;
-
-      alert(`Added to cart: ${quantity} x ${productName} (${finish}, ${size})`);
-    });
-  }
-
   // Product Tabs
   const tabButtons = document.querySelectorAll(".tab-button");
   const tabPanes = document.querySelectorAll(".tab-pane");
