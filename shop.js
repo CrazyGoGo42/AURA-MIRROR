@@ -417,54 +417,122 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Enhanced scroll animations with Intersection Observer
   function initScrollAnimations() {
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px",
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.style.animationPlayState = "running";
-          entry.target.classList.add("animate-in");
-        }
-      });
-    }, observerOptions);
-
-    // Observe product cards
+    // Remove scroll-based reveals for immediate luxury feel
     const productCards = document.querySelectorAll(".product-card");
-    productCards.forEach((card) => {
-      card.style.animationPlayState = "paused";
-      observer.observe(card);
+    productCards.forEach((card, index) => {
+      // Remove animation delays and paused states
+      card.style.animationPlayState = "running";
+      card.classList.add("animate-in");
+
+      // Add immediate sophisticated hover effects
+      card.addEventListener("mouseenter", function () {
+        this.style.transform = "translateY(-15px) scale(1.02)";
+        this.style.boxShadow = "0 25px 70px rgba(0, 0, 0, 0.15)";
+      });
+
+      card.addEventListener("mouseleave", function () {
+        this.style.transform = "translateY(0) scale(1)";
+        this.style.boxShadow = "0 8px 32px rgba(0, 0, 0, 0.06)";
+      });
     });
 
-    // Observe featured cards
+    // Keep featured cards but make them immediately visible
     const featuredCards = document.querySelectorAll(".featured-card");
     featuredCards.forEach((card) => {
-      observer.observe(card);
+      card.classList.add("animate-in");
+    });
+
+    // Make category items immediately visible
+    const categoryItems = document.querySelectorAll(".category-item");
+    categoryItems.forEach((item, index) => {
+      item.style.animationDelay = "0s";
+      item.classList.add("animate-in");
     });
   }
 
   // Initialize scroll animations
   initScrollAnimations();
 
-  // Enhanced product card interactions
+  // Add luxurious parallax effect for hero section
+  function initLuxuriousParallax() {
+    const hero = document.querySelector(".shop-hero");
+    const decorations = document.querySelectorAll(".beauty-element");
+
+    if (!hero) return;
+
+    function updateParallax() {
+      const scrolled = window.pageYOffset;
+      const rate = scrolled * -0.5;
+
+      decorations.forEach((decoration, index) => {
+        const speed = 0.3 + index * 0.1;
+        decoration.style.transform = `translateY(${scrolled * speed}px) scale(${
+          0.5 + index * 0.1
+        })`;
+      });
+
+      // Subtle hero content parallax
+      const heroContent = hero.querySelector(".shop-hero-content");
+      if (heroContent) {
+        heroContent.style.transform = `translateY(${rate * 0.2}px)`;
+      }
+    }
+
+    let ticking = false;
+    function requestTick() {
+      if (!ticking) {
+        requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    }
+
+    function handleScroll() {
+      requestTick();
+      ticking = false;
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    updateParallax();
+  }
+
+  // Enhanced product card interactions with luxury effects
   function enhanceProductCards() {
     const productCards = document.querySelectorAll(".product-card");
 
     productCards.forEach((card) => {
-      // Add loading shimmer effect
-      card.addEventListener("mouseenter", function () {
-        this.style.setProperty("--shimmer-angle", "0deg");
-        setTimeout(() => {
-          this.style.setProperty("--shimmer-angle", "90deg");
-        }, 100);
+      // Add sophisticated magnetic effect on mouse move
+      card.addEventListener("mousemove", function (e) {
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = (y - centerY) / 30;
+        const rotateY = (centerX - x) / 30;
+
+        this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-15px) scale(1.02)`;
       });
 
-      // Add ripple effect to shop buttons
+      card.addEventListener("mouseleave", function () {
+        this.style.transform =
+          "perspective(1000px) rotateX(0) rotateY(0) translateY(0) scale(1)";
+      });
+
+      // Enhanced button interactions with immediate luxury response
       const button = card.querySelector(".shop-button");
       if (button) {
+        button.addEventListener("mouseenter", function () {
+          this.style.transform = "translateY(-3px) scale(1.05)";
+          this.style.boxShadow = "0 12px 30px rgba(200, 162, 125, 0.5)";
+        });
+
+        button.addEventListener("mouseleave", function () {
+          this.style.transform = "translateY(0) scale(1)";
+          this.style.boxShadow = "0 8px 25px rgba(200, 162, 125, 0.4)";
+        });
+
         button.addEventListener("click", function (e) {
+          // Create refined ripple effect
           const ripple = document.createElement("div");
           const rect = this.getBoundingClientRect();
           const size = Math.max(rect.width, rect.height);
@@ -477,10 +545,10 @@ document.addEventListener("DOMContentLoaded", function () {
             height: ${size}px;
             left: ${x}px;
             top: ${y}px;
-            background: rgba(255, 255, 255, 0.4);
+            background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%);
             border-radius: 50%;
             transform: scale(0);
-            animation: ripple 0.6s ease-out;
+            animation: luxuryRipple 0.6s cubic-bezier(0.4, 0, 0.2, 1);
             pointer-events: none;
           `;
 
@@ -491,25 +559,54 @@ document.addEventListener("DOMContentLoaded", function () {
           }, 600);
         });
       }
+
+      // Add subtle product image hover effects
+      const productImage = card.querySelector(".product-image");
+      if (productImage) {
+        card.addEventListener("mouseenter", function () {
+          productImage.style.transform = "scale(1.05)";
+        });
+
+        card.addEventListener("mouseleave", function () {
+          productImage.style.transform = "scale(1)";
+        });
+      }
     });
   }
 
-  // Initialize enhanced interactions
-  enhanceProductCards();
+  // Initialize luxury parallax
+  initLuxuriousParallax();
 
-  // Add CSS for ripple animation
-  const style = document.createElement("style");
-  style.textContent = `
-    @keyframes ripple {
+  // Enhanced CSS for immediate luxury feel
+  const enhancedStyle = document.createElement("style");
+  enhancedStyle.textContent = `
+    @keyframes luxuryRipple {
       to {
-        transform: scale(2);
+        transform: scale(2.5);
         opacity: 0;
       }
     }
     
     .animate-in {
-      animation-play-state: running !important;
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+    
+    .product-card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .product-image {
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .product-badge {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .shop-button {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
   `;
-  document.head.appendChild(style);
+  document.head.appendChild(enhancedStyle);
 });
